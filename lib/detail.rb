@@ -37,7 +37,7 @@ module NFE
             :complement,
             :district,
             :city,
-            #:uf,
+            :uf,
             :zip_code,
             :taker_email,
             :pis_pasep,
@@ -75,7 +75,7 @@ module NFE
                    :address_number,
                    :district,
                    :city,
-                   #:uf,
+                   :uf,
                    :zip_code
                ])
            end
