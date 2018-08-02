@@ -122,8 +122,8 @@ describe NFE::Detail do
                 district: "Higienopolis",
                 city: "Sao Paulo",
                 taker_email: "teste@t.com.br",
-                zip_code: "01225001"
-                #uf: "SP"
+                zip_code: "01225001",
+                uf: "SP"
             }
             expect(detail.valid?).to be true
 
