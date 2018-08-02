@@ -2,7 +2,9 @@
 
 Esta gem tem como objetivo gerar arquivos RPS (Recibo Provisório de Serviços), que são utilizados para geração de Nota Fiscal Paulistana em lote. Tais arquivos são de registro fixo e devem seguir um layout disponibilizado pela Prefeitura de São Paulo.
 
-O layout utilizado nesta primeira versão foi o V.002, e o manual utilizado está [disponível aqui.](http://nfpaulistana.prefeitura.sp.gov.br/arquivos/manual/NFe_Layout_RPS.pdf)
+~~O layout utilizado nesta primeira versão foi o V.002, e o manual utilizado está [disponível aqui.](http://nfpaulistana.prefeitura.sp.gov.br/arquivos/manual/NFe_Layout_RPS.pdf)~~
+
+O layout utilizado nesta versão é o do arquivo `NFe_Layout_RPS.pdf`, presente na raiz deste repositório. O download dele foi feito do site da NFe no dia 1 de agosto de 2018.
 
 Futuramente daremos suportes a outras versões, mas, até o momento, a gem suporta a versão mais atual do manual da Prefeitura.
 
@@ -19,43 +21,44 @@ Abaixo, segue tabela comparativa dos nomes dos campos utilizados no desenvolvime
 
 ### Registro Tipo 6 - Detalhe
 
-| Nome do campo no Manual             | Nome do campo na Gem |
-| :------------------:             | :---------------------: |
-| Tipo de RPS                | rps_type          |
-| Série do RPS | rps_serial  |
-| Número do RPS                  | rps_number              |
-| Data de emissão                      | issuing_date                |
-| Situação da RPS               | rps_status |
-| Valor do serviços             | amount |
-| Valor das deduções         | tax_amount |
-| Código do serviço prestado    | service_code      |
-| Alíquota                     | aliquot            |
-| ISS retido                   | iss_by             |
-| Indicador de CPF/CNPJ do tomador | taker_type     |
-| CPF/CNPJ do tomador          | taker_document |
-| Inscrição Municipal do tomador | municipal_registration |
-| Inscrição Estadual do tomador | state_registration |
-| Nome/Razão Social do tomador  | taker_name | 
-| Tipo do endereço              | address_type |
-| Endereço do tomador           | address      |
-| Número do endereço            | address_number | 
-| Complemento                   | complement     |
-| Bairro do tomador             | district |
-| Cidade do tomador             | city     |
-| UF do tomador                 | uf        |
-| Email do tomador              | taker_email |
-| PIS/PASEP                     | pis_pasep   |
-| COFINS                        | cofins     |
-| INSS                          | inss       |
-| IR                            | ir         |
-| CSSL                          | cssl       |
-| Carga tributária - valor      | total_tax_amount |
-| Carga tributária - porcentagem |  tributary_percentage |
-| Carga tributária - fonte      | tributary_source |
-| CEI                           | cei |
-| Matrícula da obra             | matriculation |
-| Município prestação - cód. IBGE | city_ibge_code |
-| Discriminação dos serviços | service_description | 
+| Nome do campo no Manual            | Nome do campo na Gem    |
+| :------------------:               | :---------------------: |
+| Tipo de RPS                        | rps_type                |
+| Série do RPS                       | rps_serial              |
+| Número do RPS                      | rps_number              |
+| Data de emissão                    | issuing_date            |
+| Situação da RPS                    | rps_status              |
+| Valor do serviços                  | amount                  |
+| Valor das deduções                 | tax_amount              |
+| Código do serviço prestado         | service_code            |
+| Alíquota                           | aliquot                 |
+| ISS retido                         | iss_by                  |
+| Indicador de CPF/CNPJ do tomador   | taker_type              |
+| CPF/CNPJ do tomador                | taker_document          |
+| Inscrição Municipal do tomador     | municipal_registration  |
+| Inscrição Estadual do tomador      | state_registration      |
+| Nome/Razão Social do tomador       | taker_name              |
+| Tipo do endereço                   | address_type            |
+| Endereço do tomador                | address                 |
+| Número do endereço                 | address_number          |
+| Complemento                        | complement              |
+| Bairro do tomador                  | district                |
+| Cidade do tomador                  | city                    |
+| UF do tomador                      | uf                      |
+| Email do tomador                   | taker_email             |
+| PIS/PASEP                          | pis_pasep               |
+| COFINS                             | cofins                  |
+| INSS                               | inss                    |
+| IR                                 | ir                      |
+| CSSL                               | cssl                    |
+| Carga tributária - valor           | total_tax_amount        |
+| Carga tributária - porcentagem     | tributary_percentage    |
+| Carga tributária - fonte           | tributary_source        |
+| CEI                                | cei                     |
+| Matrícula da obra                  | matriculation           |
+| Município prestação - cód. IBGE    | city_ibge_code          |
+| Número de encapsulamento           | encapsulation_number    |
+| Discriminação dos serviços         | service_description     |
 
 ### Registro Tipo 9 - Rodapé
 

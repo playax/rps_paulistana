@@ -106,6 +106,9 @@ module NFE
             when :uf
                 @size = 2
                 @type = Type::ALPHA
+            when :encapsulation_number
+                @size = 10
+                @type = Type::NUM
             end
         end
 
