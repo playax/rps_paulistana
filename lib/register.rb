@@ -55,20 +55,6 @@ module NFE
             return @fields
         end
 
-        private def set_non_filled
-            non_filled = (self.class::VALID_FIELDS - @required_fields) - self.to_hash.keys
-
-            non_filled.each do |field_name|
-                field = RPSField.new field_name
-                if field.valid?
-                    field.check_value
-                    @fields << field
-                else
-                    raise Errors::InvalidFieldError, /The field #{field.name}; Value: #{field.value} is invalid. Check its value/
-                end
-            end
-        end
-
         def to_hash
             fields_hash = Hash.new
             @fields.each do |field|
@@ -85,6 +71,22 @@ module NFE
             end
 
             return "#{string}\n"
+        end
+
+        private
+
+        def set_non_filled
+            non_filled = (self.class::VALID_FIELDS - @required_fields) - self.to_hash.keys
+
+            non_filled.each do |field_name|
+                field = RPSField.new field_name
+                if field.valid?
+                    field.check_value
+                    @fields << field
+                else
+                    raise Errors::InvalidFieldError, /The field #{field.name}; Value: #{field.value} is invalid. Check its value/
+                end
+            end
         end
     end
 end
